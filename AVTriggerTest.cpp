@@ -7,6 +7,8 @@
 // Comment this for even more AV triggers
 // #define USE_EXCEPTIONS
 
+#define EMPTY_MAIN
+
 #include <iostream>
 #include <string>
 
@@ -142,7 +144,8 @@ bool runExecutable(const std::string& exePath)
 
 int main()
 {
-#ifdef USE_EXCEPTIONS
+#if (defined EMPTY_MAIN)
+#elif (defined USE_EXCEPTIONS)
     try
     {
         runExecutable("test.exe");
